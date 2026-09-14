@@ -15,11 +15,18 @@ public class Hm10 {
 
     // Task 2
     public static void suggestAppVersion(int osType, int clientDeviceYear) {
-        int currentYear = LocalDate.now().getYear();
-        String osName = (osType == 0) ? "iOS" : "Android";
-        String version = (clientDeviceYear < currentYear) ? "облегченную" : "обычную";
+        String osName;
+        if (osType == 0) {
+            osName = "iOS";
+        } else {
+            osName = "Android";
+        }
 
-        System.out.println("Установите " + version + " версию приложения для " + osName + " по ссылке");
+        if (clientDeviceYear < 2015) {
+            System.out.println("Установите облегченную версию приложения для " + osName + " по ссылке");
+        } else {
+            System.out.println("Установите версию приложения для " + osName + " по ссылке");
+        }
     }
 
     // task 3
